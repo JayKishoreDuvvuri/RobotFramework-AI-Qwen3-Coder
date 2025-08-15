@@ -43,11 +43,12 @@ Before running the tests, ensure you have the following installed:
    ```bash
    git clone https://github.com/JayKishoreDuvvuri/RobotFramework-AI-Qwen3-Coder.git
    ```
-## Install dependencies
-   ```bash
-- pip install -r requirements.txt - Install Python dependencies
+
+## Install Python dependencies
+```bash
+- pip install -r requirements.txt 
 - rfbrowser init
-   ```
+```
 
 ## Run the Tests
 robot -d results tests/e2e_test.robot    
