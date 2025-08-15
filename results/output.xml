@@ -1,0 +1,1420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on darwin)" generated="2025-08-15T12:36:42.911793" rpa="false" schemaversion="5">
+<suite id="s1" name="E2E Test" source="/Users/Jay/Desktop/RobotFrameowrk-Qwen3-Coder/tests/e2e_test.robot">
+<test id="s1-t1" name="TC001 - Successful Login With Valid Credentials" line="12">
+<kw name="Open Shop Application" owner="init" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-15T12:36:43.180653" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/Jay/Desktop/RobotFrameowrk-Qwen3-Coder/results/browser/traces/temp/aa28f270-009d-409b-a966-09deb1b67a61"}</msg>
+<msg time="2025-08-15T12:36:43.269589" level="INFO">Starting Browser process /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js using at 127.0.0.1:55887</msg>
+<msg time="2025-08-15T12:36:46.376951" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/Jay/Desktop/RobotFrameowrk-Qwen3-Coder/results/browser/traces/temp/aa28f270-009d-409b-a966-09deb1b67a61"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-15T12:36:43.179857" elapsed="3.197481"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-08-15T12:36:46.381011" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 780,
+    "width": 1320
+  }
+}</msg>
+<msg time="2025-08-15T12:36:46.403893" level="INFO">Successfully created context. </msg>
+<msg time="2025-08-15T12:36:46.403976" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 780, 'width': 1320}}</msg>
+<arg>viewport={'width': 1320, 'height': 780}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-08-15T12:36:46.377968" elapsed="0.026141"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-15T12:36:48.364042" level="INFO">Successfully initialized new page object and opened url: https://shop.qaautomationlabs.com</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-15T12:36:46.404449" elapsed="1.959856"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:43.178721" elapsed="5.185798"/>
+</kw>
+<kw name="Login With Credentials" owner="LoginPage">
+<kw name="Navigate To Login Page" owner="LoginPage">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:48.406509" level="INFO">Waited for Element with selector xpath=(//span[contains(text(), 'Login')])[2] at state visible</msg>
+<arg>${LOGIN_TITLE}</arg>
+<arg>visible</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:48.366396" elapsed="0.040289"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:48.365985" elapsed="0.040851"/>
+</kw>
+<kw name="Enter Email" owner="LoginPage">
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:48.422360" level="INFO">Waited for Element with selector input#email at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:48.408406" elapsed="0.014127"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:48.407998" elapsed="0.014677"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:48.423507" level="INFO">Fills the text 'demo@demo.com' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:48.422874" elapsed="0.028166"/>
+</kw>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-08-15T12:36:48.407564" elapsed="0.043630"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-08-15T12:36:48.407089" elapsed="0.044200"/>
+</kw>
+<kw name="Enter Password" owner="LoginPage">
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:48.468214" level="INFO">Waited for Element with selector input#password at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:48.452970" elapsed="0.015390"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:48.452525" elapsed="0.016034"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:48.469201" level="INFO">Fills the text 'demo' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:48.468709" elapsed="0.008989"/>
+</kw>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-08-15T12:36:48.451948" elapsed="0.025871"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-08-15T12:36:48.451495" elapsed="0.026396"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:48.485087" level="INFO">Waited for Element with selector button#loginBtn at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:48.479003" elapsed="0.006268"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:48.478686" elapsed="0.006716"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:48.486161" level="INFO">Clicks the element 'button#loginBtn'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:48.485586" elapsed="0.655821"/>
+</kw>
+<arg>${LOGIN_BUTTON}</arg>
+<status status="PASS" start="2025-08-15T12:36:48.478382" elapsed="0.663176"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:48.478055" elapsed="0.663595"/>
+</kw>
+<arg>demo@demo.com</arg>
+<arg>demo</arg>
+<doc>Logs in with the provided email and password.</doc>
+<status status="PASS" start="2025-08-15T12:36:48.365224" elapsed="0.776505"/>
+</kw>
+<kw name="Verify Successful Login" owner="LoginPage">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:49.182950" level="INFO">Waited for Element with selector xpath=(//a[normalize-space()='Home'])[2] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.143000" elapsed="0.040363"/>
+</kw>
+<arg>${MY_ACCOUNT_HEADER}</arg>
+<status status="PASS" start="2025-08-15T12:36:49.142560" elapsed="0.041064"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-15T12:36:49.186870" level="INFO">${current_url} = https://shop.qaautomationlabs.com/shop.php</msg>
+<var>${current_url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.183848" elapsed="0.003073"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>${HOMEPAGE_URL}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.187147" elapsed="0.000328"/>
+</kw>
+<doc>Verifies that the user is redirected to the homepage after a successful login.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.142079" elapsed="0.045502"/>
+</kw>
+<kw name="Get Page Title" owner="init">
+<kw name="Get Title" owner="Browser">
+<msg time="2025-08-15T12:36:49.192092" level="INFO">Title: 'SHOP | QA AUTOMATIONLAB'</msg>
+<msg time="2025-08-15T12:36:49.192253" level="INFO">${title} = SHOP | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.188209" elapsed="0.004083"/>
+</kw>
+<return>
+<value>${title}</value>
+<status status="PASS" start="2025-08-15T12:36:49.192421" elapsed="0.000193"/>
+</return>
+<msg time="2025-08-15T12:36:49.192825" level="INFO">${title} = SHOP | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<status status="PASS" start="2025-08-15T12:36:49.187867" elapsed="0.004996"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>SHOP | QA AUTOMATIONLAB</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.193147" elapsed="0.000350"/>
+</kw>
+<kw name="Close All Shop Browsers" owner="init" type="TEARDOWN">
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-08-15T12:36:49.421602" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.194237" elapsed="0.227535"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:49.193869" elapsed="0.228026"/>
+</kw>
+<doc>Test that a user can log in successfully with valid credentials.</doc>
+<tag>Login</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-08-15T12:36:43.177812" elapsed="6.244202"/>
+</test>
+<test id="s1-t2" name="TC002 - Failed Login With Invalid Credentials" line="20">
+<kw name="Open Shop Application" owner="init" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-15T12:36:49.433482" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/Jay/Desktop/RobotFrameowrk-Qwen3-Coder/results/browser/traces/temp/e4701830-884c-4c87-9811-b3671bf58a1d"}</msg>
+<msg time="2025-08-15T12:36:49.964879" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/Jay/Desktop/RobotFrameowrk-Qwen3-Coder/results/browser/traces/temp/e4701830-884c-4c87-9811-b3671bf58a1d"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.432545" elapsed="0.532767"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-08-15T12:36:49.971651" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 780,
+    "width": 1320
+  }
+}</msg>
+<msg time="2025-08-15T12:36:49.990761" level="INFO">Successfully created context. </msg>
+<msg time="2025-08-15T12:36:49.990841" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 780, 'width': 1320}}</msg>
+<arg>viewport={'width': 1320, 'height': 780}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.965845" elapsed="0.025103"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-15T12:36:51.371874" level="INFO">Successfully initialized new page object and opened url: https://shop.qaautomationlabs.com</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-15T12:36:49.991180" elapsed="1.380905"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:49.432086" elapsed="1.940127"/>
+</kw>
+<kw name="Navigate To Login Page" owner="LoginPage">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:51.401050" level="INFO">Waited for Element with selector xpath=(//span[contains(text(), 'Login')])[2] at state visible</msg>
+<arg>${LOGIN_TITLE}</arg>
+<arg>visible</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.372988" elapsed="0.028245"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:51.372515" elapsed="0.028851"/>
+</kw>
+<kw name="Enter Email" owner="LoginPage">
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:51.410114" level="INFO">Waited for Element with selector input#email at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.402860" elapsed="0.007433"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:51.402477" elapsed="0.007946"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:51.411227" level="INFO">Fills the text 'invalid@example.com' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.410604" elapsed="0.014901"/>
+</kw>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-08-15T12:36:51.402068" elapsed="0.023590"/>
+</kw>
+<arg>invalid@example.com</arg>
+<status status="PASS" start="2025-08-15T12:36:51.401640" elapsed="0.024111"/>
+</kw>
+<kw name="Enter Password" owner="LoginPage">
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:51.433772" level="INFO">Waited for Element with selector input#password at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.427613" elapsed="0.006476"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:51.427183" elapsed="0.007098"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:51.435201" level="INFO">Fills the text 'wrongpassword' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.434557" elapsed="0.073075"/>
+</kw>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-08-15T12:36:51.426733" elapsed="0.081046"/>
+</kw>
+<arg>wrongpassword</arg>
+<status status="PASS" start="2025-08-15T12:36:51.426167" elapsed="0.081702"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:51.514358" level="INFO">Waited for Element with selector button#loginBtn at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.509271" elapsed="0.005272"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:51.508897" elapsed="0.005783"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:51.515432" level="INFO">Clicks the element 'button#loginBtn'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.514858" elapsed="0.047606"/>
+</kw>
+<arg>${LOGIN_BUTTON}</arg>
+<status status="PASS" start="2025-08-15T12:36:51.508524" elapsed="0.054085"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:51.508135" elapsed="0.054565"/>
+</kw>
+<kw name="Verify Login Error Message" owner="LoginPage">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:51.569421" level="INFO">Waited for Element with selector id=errorMsg at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.563789" elapsed="0.005814"/>
+</kw>
+<arg>${ERROR_MESSAGE}</arg>
+<status status="PASS" start="2025-08-15T12:36:51.563398" elapsed="0.006343"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-15T12:36:51.594024" level="INFO">Text: 'Invalid email or password!'</msg>
+<msg time="2025-08-15T12:36:51.594188" level="INFO">${actual_message} = Invalid email or password!</msg>
+<var>${actual_message}</var>
+<arg>${ERROR_MESSAGE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.569936" elapsed="0.024290"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_message.strip()}</arg>
+<arg>${expected_message}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.594445" elapsed="0.000889"/>
+</kw>
+<arg>Invalid email or password!</arg>
+<doc>Verifies that the error message is displayed when login fails.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.562986" elapsed="0.032461"/>
+</kw>
+<kw name="Close All Shop Browsers" owner="init" type="TEARDOWN">
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-08-15T12:36:51.800928" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.596144" elapsed="0.204953"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:51.595775" elapsed="0.205446"/>
+</kw>
+<doc>Test that login fails with an appropriate message for invalid credentials.</doc>
+<tag>Login</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-08-15T12:36:49.429256" elapsed="2.372083"/>
+</test>
+<test id="s1-t3" name="TC003 - E2E TEST - Complete Checkout Workflow" line="30">
+<kw name="Open Shop Application" owner="init" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-15T12:36:51.812965" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/Jay/Desktop/RobotFrameowrk-Qwen3-Coder/results/browser/traces/temp/e0a46cdc-ae56-4794-8870-2722dc42de8b"}</msg>
+<msg time="2025-08-15T12:36:52.329854" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/Jay/Desktop/RobotFrameowrk-Qwen3-Coder/results/browser/traces/temp/e0a46cdc-ae56-4794-8870-2722dc42de8b"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-15T12:36:51.811905" elapsed="0.518329"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-08-15T12:36:52.334728" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 780,
+    "width": 1320
+  }
+}</msg>
+<msg time="2025-08-15T12:36:52.353899" level="INFO">Successfully created context. </msg>
+<msg time="2025-08-15T12:36:52.353976" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 780, 'width': 1320}}</msg>
+<arg>viewport={'width': 1320, 'height': 780}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-08-15T12:36:52.330531" elapsed="0.023545"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-15T12:36:53.761899" level="INFO">Successfully initialized new page object and opened url: https://shop.qaautomationlabs.com</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-15T12:36:52.354408" elapsed="1.407731"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:51.811463" elapsed="1.950867"/>
+</kw>
+<kw name="Login With Credentials" owner="LoginPage">
+<kw name="Navigate To Login Page" owner="LoginPage">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:53.791413" level="INFO">Waited for Element with selector xpath=(//span[contains(text(), 'Login')])[2] at state visible</msg>
+<arg>${LOGIN_TITLE}</arg>
+<arg>visible</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:53.763982" elapsed="0.027792"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:53.763360" elapsed="0.028645"/>
+</kw>
+<kw name="Enter Email" owner="LoginPage">
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:53.801589" level="INFO">Waited for Element with selector input#email at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:53.794022" elapsed="0.007757"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:53.793565" elapsed="0.008353"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:53.802808" level="INFO">Fills the text 'demo@demo.com' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:53.802190" elapsed="0.013996"/>
+</kw>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-08-15T12:36:53.793065" elapsed="0.023333"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-08-15T12:36:53.792224" elapsed="0.024272"/>
+</kw>
+<kw name="Enter Password" owner="LoginPage">
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:53.823994" level="INFO">Waited for Element with selector input#password at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:53.818257" elapsed="0.005922"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:53.817865" elapsed="0.006452"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:53.825117" level="INFO">Fills the text 'demo' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:53.824498" elapsed="0.059880"/>
+</kw>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-08-15T12:36:53.817441" elapsed="0.067061"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-08-15T12:36:53.816894" elapsed="0.067685"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:53.889565" level="INFO">Waited for Element with selector button#loginBtn at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:53.885633" elapsed="0.004083"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:53.885349" elapsed="0.004477"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:53.890437" level="INFO">Clicks the element 'button#loginBtn'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:53.889968" elapsed="0.721037"/>
+</kw>
+<arg>${LOGIN_BUTTON}</arg>
+<status status="PASS" start="2025-08-15T12:36:53.885065" elapsed="0.726091"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:53.884738" elapsed="0.726513"/>
+</kw>
+<arg>demo@demo.com</arg>
+<arg>demo</arg>
+<doc>Logs in with the provided email and password.</doc>
+<status status="PASS" start="2025-08-15T12:36:53.762709" elapsed="0.848621"/>
+</kw>
+<kw name="Verify Successful Login" owner="LoginPage">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:54.646766" level="INFO">Waited for Element with selector xpath=(//a[normalize-space()='Home'])[2] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.612709" elapsed="0.034241"/>
+</kw>
+<arg>${MY_ACCOUNT_HEADER}</arg>
+<status status="PASS" start="2025-08-15T12:36:54.612182" elapsed="0.034907"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-15T12:36:54.650555" level="INFO">${current_url} = https://shop.qaautomationlabs.com/shop.php</msg>
+<var>${current_url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.647323" elapsed="0.003284"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>${HOMEPAGE_URL}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.650820" elapsed="0.000308"/>
+</kw>
+<doc>Verifies that the user is redirected to the homepage after a successful login.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.611682" elapsed="0.039549"/>
+</kw>
+<kw name="Get Page Title" owner="init">
+<kw name="Get Title" owner="Browser">
+<msg time="2025-08-15T12:36:54.657474" level="INFO">Title: 'SHOP | QA AUTOMATIONLAB'</msg>
+<msg time="2025-08-15T12:36:54.657792" level="INFO">${title} = SHOP | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.651891" elapsed="0.006017"/>
+</kw>
+<return>
+<value>${title}</value>
+<status status="PASS" start="2025-08-15T12:36:54.658079" elapsed="0.000189"/>
+</return>
+<msg time="2025-08-15T12:36:54.658506" level="INFO">${title} = SHOP | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<status status="PASS" start="2025-08-15T12:36:54.651533" elapsed="0.007013"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>SHOP | QA AUTOMATIONLAB</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.658828" elapsed="0.000496"/>
+</kw>
+<kw name="Navigate To Camera Item" owner="HomePage">
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:54.666574" level="INFO">Waited for Element with selector xpath=//button[@data-id='1'] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.660778" elapsed="0.005981"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:54.660389" elapsed="0.006511"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:54.667782" level="INFO">Clicks the element 'xpath=//button[@data-id='1']'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.667083" elapsed="0.047840"/>
+</kw>
+<arg>${CAMERA_ITEM_ADD_TO_CART}</arg>
+<status status="PASS" start="2025-08-15T12:36:54.659995" elapsed="0.055072"/>
+</kw>
+<doc>Navigates to the camera item page and adds it to the cart.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.659622" elapsed="0.055533"/>
+</kw>
+<kw name="Check the Cart Item Count" owner="HomePage">
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-15T12:36:54.741443" level="INFO">Text: '1'</msg>
+<msg time="2025-08-15T12:36:54.741601" level="INFO">${cart_count} = 1</msg>
+<var>${cart_count}</var>
+<arg>${CART_COUNT}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.715969" elapsed="0.025671"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${cart_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.741852" elapsed="0.000441"/>
+</kw>
+<doc>Checks if the cart item count is 1 after adding an item.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.715441" elapsed="0.027033"/>
+</kw>
+<kw name="Click On Shopping Cart" owner="HomePage">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:54.750101" level="INFO">Waited for Element with selector xpath=(//span[@id='cartCount'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.743695" elapsed="0.006628"/>
+</kw>
+<arg>${CART_COUNT}</arg>
+<status status="PASS" start="2025-08-15T12:36:54.743266" elapsed="0.007220"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-08-15T12:36:54.751453" level="INFO">Length is 34.</msg>
+<arg>${CART_COUNT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.750749" elapsed="0.000809"/>
+</kw>
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:54.760001" level="INFO">Waited for Element with selector xpath=(//span[@id='cartCount'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.753793" elapsed="0.006417"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:54.753123" elapsed="0.007232"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:54.761190" level="INFO">Clicks the element 'xpath=(//span[@id='cartCount'])[1]'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.760541" elapsed="0.667707"/>
+</kw>
+<arg>${CART_COUNT}</arg>
+<status status="PASS" start="2025-08-15T12:36:54.751862" elapsed="0.676534"/>
+</kw>
+<doc>Clicks on the shopping cart icon to view the cart.</doc>
+<status status="PASS" start="2025-08-15T12:36:54.742871" elapsed="0.685611"/>
+</kw>
+<kw name="Get Page Title" owner="init">
+<kw name="Get Title" owner="Browser">
+<msg time="2025-08-15T12:36:55.467308" level="INFO">Title: 'CART | QA AUTOMATIONLAB'</msg>
+<msg time="2025-08-15T12:36:55.467610" level="INFO">${title} = CART | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-08-15T12:36:55.429149" elapsed="0.038548"/>
+</kw>
+<return>
+<value>${title}</value>
+<status status="PASS" start="2025-08-15T12:36:55.467847" elapsed="0.000141"/>
+</return>
+<msg time="2025-08-15T12:36:55.468178" level="INFO">${title} = CART | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<status status="PASS" start="2025-08-15T12:36:55.428764" elapsed="0.039451"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>CART | QA AUTOMATIONLAB</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:55.468468" elapsed="0.000250"/>
+</kw>
+<kw name="Click on Checkout Button" owner="CartPage">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:55.496527" level="INFO">Waited for Element with selector id=checkoutBtn at state enabled</msg>
+<arg>${PROCEED_TO_CHECKOUT_BUTTON}</arg>
+<arg>enabled</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:55.469311" elapsed="0.027398"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:55.501882" level="INFO">Waited for Element with selector xpath=//h4[normalize-space()='Cart'] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:55.497415" elapsed="0.004635"/>
+</kw>
+<arg>${CART_PAGE_HEADER}</arg>
+<status status="PASS" start="2025-08-15T12:36:55.496959" elapsed="0.005221"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:55.506577" level="INFO">Waited for Element with selector xpath=(//span[@class='bg-secondary pr-3'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:55.502827" elapsed="0.003918"/>
+</kw>
+<arg>${CART_SUMMARY_HEADER}</arg>
+<status status="PASS" start="2025-08-15T12:36:55.502379" elapsed="0.004489"/>
+</kw>
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:55.512700" level="INFO">Waited for Element with selector id=checkoutBtn at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:55.507895" elapsed="0.004992"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:55.507506" elapsed="0.005513"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:55.513757" level="INFO">Clicks the element 'id=checkoutBtn'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:55.513193" elapsed="0.634043"/>
+</kw>
+<arg>${PROCEED_TO_CHECKOUT_BUTTON}</arg>
+<status status="PASS" start="2025-08-15T12:36:55.507061" elapsed="0.640327"/>
+</kw>
+<doc>Clicks the "Proceed to Checkout" button to navigate to the checkout page.</doc>
+<status status="PASS" start="2025-08-15T12:36:55.468981" elapsed="0.678500"/>
+</kw>
+<kw name="Get Page Title" owner="init">
+<kw name="Get Title" owner="Browser">
+<msg time="2025-08-15T12:36:56.180538" level="INFO">Title: 'CHECKOUT | QA AUTOMATIONLAB'</msg>
+<msg time="2025-08-15T12:36:56.180904" level="INFO">${title} = CHECKOUT | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.148157" elapsed="0.032854"/>
+</kw>
+<return>
+<value>${title}</value>
+<status status="PASS" start="2025-08-15T12:36:56.181264" elapsed="0.000151"/>
+</return>
+<msg time="2025-08-15T12:36:56.181822" level="INFO">${title} = CHECKOUT | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<status status="PASS" start="2025-08-15T12:36:56.147770" elapsed="0.034125"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>CHECKOUT | QA AUTOMATIONLAB</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.182515" elapsed="0.000425"/>
+</kw>
+<kw name="Check Checkout Page Loaded" owner="CheckoutPage">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.201791" level="INFO">Waited for Element with selector xpath=(//span[normalize-space()='Billing Address'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.184269" elapsed="0.017705"/>
+</kw>
+<arg>${BILLING_ADDRESS_HEADER}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.183784" elapsed="0.018325"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.207550" level="INFO">Waited for Element with selector xpath=(//span[normalize-space()='Order Total'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.202880" elapsed="0.004972"/>
+</kw>
+<arg>${ORDER_TOTAL_HEADER}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.202388" elapsed="0.005617"/>
+</kw>
+<doc>Checks if the Checkout page is loaded by verifying the presence of key elements.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.183373" elapsed="0.024721"/>
+</kw>
+<kw name="Fill Billing Address" owner="CheckoutPage">
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.216308" level="INFO">Waited for Element with selector input#firstname at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.209665" elapsed="0.006841"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.209241" elapsed="0.007416"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:56.217467" level="INFO">Fills the text 'John' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.216842" elapsed="0.009833"/>
+</kw>
+<arg>${FIRST_NAME}</arg>
+<arg>John</arg>
+<status status="PASS" start="2025-08-15T12:36:56.208796" elapsed="0.018136"/>
+</kw>
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.234260" level="INFO">Waited for Element with selector input#lastname at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.228182" elapsed="0.006333"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.227787" elapsed="0.006881"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:56.235465" level="INFO">Fills the text 'Doe' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.234850" elapsed="0.008342"/>
+</kw>
+<arg>${LAST_NAME}</arg>
+<arg>Doe</arg>
+<status status="PASS" start="2025-08-15T12:36:56.227305" elapsed="0.016043"/>
+</kw>
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.250071" level="INFO">Waited for Element with selector input#email at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.244474" elapsed="0.005785"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.244043" elapsed="0.006436"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:56.251309" level="INFO">Fills the text 'eztifjj@ygoi.com' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.250672" elapsed="0.008703"/>
+</kw>
+<arg>${EMAIL}</arg>
+<arg>eztifjj@ygoi.com</arg>
+<status status="PASS" start="2025-08-15T12:36:56.243568" elapsed="0.015971"/>
+</kw>
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.265521" level="INFO">Waited for Element with selector input#phone at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.260592" elapsed="0.005123"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.260208" elapsed="0.005656"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:56.266941" level="INFO">Fills the text '555-1234' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.266150" elapsed="0.008933"/>
+</kw>
+<arg>${MOBILE_NUMBER}</arg>
+<arg>555-1234</arg>
+<status status="PASS" start="2025-08-15T12:36:56.259757" elapsed="0.015484"/>
+</kw>
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.281160" level="INFO">Waited for Element with selector id=address at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.276333" elapsed="0.005004"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.275937" elapsed="0.005537"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:56.282258" level="INFO">Fills the text '123-Main-St' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.281653" elapsed="0.009102"/>
+</kw>
+<arg>${ADDRESS}</arg>
+<arg>123-Main-St</arg>
+<status status="PASS" start="2025-08-15T12:36:56.275476" elapsed="0.015525"/>
+</kw>
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.297549" level="INFO">Waited for Element with selector input#states at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.292353" elapsed="0.005448"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.291897" elapsed="0.006058"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:56.298812" level="INFO">Fills the text 'California' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.298138" elapsed="0.008638"/>
+</kw>
+<arg>${STATE}</arg>
+<arg>California</arg>
+<status status="PASS" start="2025-08-15T12:36:56.291299" elapsed="0.015627"/>
+</kw>
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.312481" level="INFO">Waited for Element with selector input#city at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.307982" elapsed="0.004744"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.307590" elapsed="0.005276"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:56.313640" level="INFO">Fills the text 'Los Angeles' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.313043" elapsed="0.008340"/>
+</kw>
+<arg>${CITY}</arg>
+<arg>Los Angeles</arg>
+<status status="PASS" start="2025-08-15T12:36:56.307137" elapsed="0.014397"/>
+</kw>
+<kw name="Input Text Into Field" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.328153" level="INFO">Waited for Element with selector input#pincode at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.322590" elapsed="0.005741"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.322204" elapsed="0.006267"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-15T12:36:56.329271" level="INFO">Fills the text '90001' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.328650" elapsed="0.010635"/>
+</kw>
+<arg>${ZIP_CODE}</arg>
+<arg>90001</arg>
+<status status="PASS" start="2025-08-15T12:36:56.321748" elapsed="0.017692"/>
+</kw>
+<doc>Fills the billing address form. Optional fields can be left empty.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.208407" elapsed="0.131143"/>
+</kw>
+<kw name="Proceed To Payment" owner="CheckoutPage">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.357641" level="INFO">Waited for Element with selector id=btn-continue at state enabled</msg>
+<arg>${CONTINUE_BUTTON}</arg>
+<arg>enabled</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.340254" elapsed="0.017569"/>
+</kw>
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:56.364175" level="INFO">Waited for Element with selector id=btn-continue at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.358945" elapsed="0.005429"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.358531" elapsed="0.005981"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:56.365260" level="INFO">Clicks the element 'id=btn-continue'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.364688" elapsed="0.632526"/>
+</kw>
+<arg>${CONTINUE_BUTTON}</arg>
+<status status="PASS" start="2025-08-15T12:36:56.358079" elapsed="0.639285"/>
+</kw>
+<doc>Clicks the continue button to proceed to the payment page.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.339842" elapsed="0.657612"/>
+</kw>
+<kw name="Get Page Title" owner="init">
+<kw name="Get Title" owner="Browser">
+<msg time="2025-08-15T12:36:57.021909" level="INFO">Title: 'CONFIRM | QA AUTOMATIONLAB'</msg>
+<msg time="2025-08-15T12:36:57.022088" level="INFO">${title} = CONFIRM | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-08-15T12:36:56.998121" elapsed="0.024009"/>
+</kw>
+<return>
+<value>${title}</value>
+<status status="PASS" start="2025-08-15T12:36:57.022250" elapsed="0.000159"/>
+</return>
+<msg time="2025-08-15T12:36:57.022667" level="INFO">${title} = CONFIRM | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<status status="PASS" start="2025-08-15T12:36:56.997734" elapsed="0.024976"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>CONFIRM | QA AUTOMATIONLAB</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.022995" elapsed="0.000282"/>
+</kw>
+<kw name="Check Confirm Details Page Loaded" owner="ConfirmDetailsPage">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.038298" level="INFO">Waited for Element with selector xpath=(//span[normalize-space()='Confirm Details'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.024338" elapsed="0.014144"/>
+</kw>
+<arg>${CONFIRM_DETAILS_HEADER}</arg>
+<status status="PASS" start="2025-08-15T12:36:57.023920" elapsed="0.014699"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.043838" level="INFO">Waited for Element with selector xpath=(//span[normalize-space()='Order Total'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.039290" elapsed="0.004734"/>
+</kw>
+<arg>${ORDER_TOTAL_HEADER}</arg>
+<status status="PASS" start="2025-08-15T12:36:57.038822" elapsed="0.005337"/>
+</kw>
+<doc>Checks if the Confirm Details page is loaded by verifying the presence of key elements.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.023553" elapsed="0.020691"/>
+</kw>
+<kw name="Assert Order Total And Place Order" owner="ConfirmDetailsPage">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.051019" level="INFO">Waited for Element with selector xpath=(//td[@class='align-middle'][contains(text(),'₹3999')])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.045330" elapsed="0.005875"/>
+</kw>
+<arg>${ORDER_TOTAL}</arg>
+<status status="PASS" start="2025-08-15T12:36:57.044927" elapsed="0.006413"/>
+</kw>
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.056840" level="INFO">Waited for Element with selector xpath=(//a[normalize-space()='Place Order'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.052370" elapsed="0.004642"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:57.051986" elapsed="0.005155"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:57.057943" level="INFO">Clicks the element 'xpath=(//a[normalize-space()='Place Order'])[1]'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.057311" elapsed="0.646484"/>
+</kw>
+<arg>${PLACE_ORDER_BUTTON}</arg>
+<status status="PASS" start="2025-08-15T12:36:57.051549" elapsed="0.652400"/>
+</kw>
+<doc>Asserts the order total and clicks the place order button.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.044542" elapsed="0.659498"/>
+</kw>
+<kw name="Get Page Title" owner="init">
+<kw name="Get Title" owner="Browser">
+<msg time="2025-08-15T12:36:57.723054" level="INFO">Title: 'THANKS | QA AUTOMATIONLAB'</msg>
+<msg time="2025-08-15T12:36:57.723215" level="INFO">${title} = THANKS | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.704723" elapsed="0.018535"/>
+</kw>
+<return>
+<value>${title}</value>
+<status status="PASS" start="2025-08-15T12:36:57.723469" elapsed="0.000183"/>
+</return>
+<msg time="2025-08-15T12:36:57.723871" level="INFO">${title} = THANKS | QA AUTOMATIONLAB</msg>
+<var>${title}</var>
+<status status="PASS" start="2025-08-15T12:36:57.704333" elapsed="0.019579"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>THANKS | QA AUTOMATIONLAB</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.724316" elapsed="0.000309"/>
+</kw>
+<kw name="Check Thanks Page Loaded" owner="ThanksPage">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.739664" level="INFO">Waited for Element with selector xpath=(//span[normalize-space()='Thanks'])[2] at state visible</msg>
+<arg>${THANKS_HEADER}</arg>
+<arg>visible</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.725276" elapsed="0.014574"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.745787" level="INFO">Waited for Element with selector xpath=//h1[contains(text(),'🎉 Thank You for Your Order!')] at state visible</msg>
+<arg>${THANK_YOU_MESSAGE}</arg>
+<arg>visible</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.740123" elapsed="0.005854"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.751403" level="INFO">Waited for Element with selector xpath=//p[normalize-space()='Your order has been placed successfully.'] at state visible</msg>
+<arg>${ORDER_SUCCESSFULL_MESSAGE}</arg>
+<arg>visible</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.746204" elapsed="0.005381"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.767785" level="INFO">Waited for Element with selector xpath=(//a[normalize-space()='Shop Again'])[1] at state enabled</msg>
+<arg>${SHOP_AGAIN_BUTTON}</arg>
+<arg>enabled</arg>
+<arg>timeout=1s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.751816" elapsed="0.016157"/>
+</kw>
+<doc>Checks if the Thanks page is loaded by verifying the presence of key elements.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.724920" elapsed="0.043191"/>
+</kw>
+<kw name="Click Shop Again Button" owner="ThanksPage">
+<kw name="Click Element If Visible" owner="init">
+<kw name="Wait Until Page Contains Element" owner="init">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-15T12:36:57.773755" level="INFO">Waited for Element with selector xpath=(//a[normalize-space()='Shop Again'])[1] at state visible</msg>
+<arg>${locator}</arg>
+<arg>visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.769535" elapsed="0.004411"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-08-15T12:36:57.769157" elapsed="0.004991"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-15T12:36:57.774964" level="INFO">Clicks the element 'xpath=(//a[normalize-space()='Shop Again'])[1]'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.774349" elapsed="0.635500"/>
+</kw>
+<arg>${SHOP_AGAIN_BUTTON}</arg>
+<status status="PASS" start="2025-08-15T12:36:57.768778" elapsed="0.641267"/>
+</kw>
+<doc>Clicks the "Shop Again" button to return to the homepage.</doc>
+<status status="PASS" start="2025-08-15T12:36:57.768393" elapsed="0.641767"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-15T12:36:58.412869" level="INFO">${current_url} = https://shop.qaautomationlabs.com/shop.php</msg>
+<var>${current_url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-15T12:36:58.410398" elapsed="0.002521"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>shop.php</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-15T12:36:58.413208" elapsed="0.000287"/>
+</kw>
+<kw name="Close All Shop Browsers" owner="init" type="TEARDOWN">
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-08-15T12:36:58.631461" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-15T12:36:58.414159" elapsed="0.217479"/>
+</kw>
+<status status="PASS" start="2025-08-15T12:36:58.413805" elapsed="0.217961"/>
+</kw>
+<doc>E2E test that completes checkout workflow.</doc>
+<tag>Navigation</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-08-15T12:36:51.808903" elapsed="6.822974"/>
+</test>
+<status status="PASS" start="2025-08-15T12:36:42.913211" elapsed="15.723442"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">Navigation</stat>
+<stat pass="1" fail="0" skip="0">Negative</stat>
+<stat pass="2" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="E2E Test">E2E Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-15T12:36:42.951022" level="WARN">Error in file '/Users/Jay/Desktop/RobotFrameowrk-Qwen3-Coder/resources/pages/init.robot' on line 19: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
