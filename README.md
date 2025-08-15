@@ -1,4 +1,4 @@
-# Robot Framework Test Automation with Page Object Model
+## Robot Framework Test Automation with Page Object Model
 
 This project demonstrates a scalable test automation framework built using **Robot Framework** with the **Browser Library** and the **Page Object Model (POM)** design pattern. It automates tests for the e-commerce website: [https://shop.qaautomationlabs.com](https://shop.qaautomationlabs.com).
 
@@ -40,9 +40,9 @@ Before running the tests, ensure you have the following installed:
 ## 🚀 Setup Instructions
 
 1. **Clone or extract the project**:
-   ```bash
-   git clone https://github.com/JayKishoreDuvvuri/RobotFramework-AI-Qwen3-Coder.git
-   ```
+```bash
+git clone https://github.com/JayKishoreDuvvuri/RobotFramework-AI-Qwen3-Coder.git
+```
 
 ## Install Python dependencies
 ```bash
