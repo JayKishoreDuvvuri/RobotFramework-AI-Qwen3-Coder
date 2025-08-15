@@ -3,6 +3,7 @@
 This project demonstrates a scalable test automation framework built using **Robot Framework** with the **Browser Library** and the **Page Object Model (POM)** design pattern. It automates tests for the e-commerce website: [https://shop.qaautomationlabs.com](https://shop.qaautomationlabs.com).
 
 ## 📁 Project Structure
+```
 robot_pom_framework/
 .
 ├── README.md                           # Project overview, setup, and run instructions
@@ -19,7 +20,7 @@ robot_pom_framework/
 │       └── ThanksPage.robot            # Keywords and locators specific to the Thanks page
 └── tests/                              # Contains the actual test case files
     └── e2e_test.robot                  # Test suite file containing your test cases (e.g., Login and E2E)
-
+```
 
 ## 🛠️ Technologies Used
 
