@@ -51,7 +51,11 @@ git clone https://github.com/JayKishoreDuvvuri/RobotFramework-AI-Qwen3-Coder.git
 ```
 
 ## Run the Tests
+```bash
 robot -d results tests/e2e_test.robot    
+```
 
 ## Test Report
+```bash
 Open 'report.html' from 'results' Folder   
+```
